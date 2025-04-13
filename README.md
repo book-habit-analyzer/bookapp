@@ -10,14 +10,18 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-A full stack reading tracker app inspired by Goodreads. This project is designed to simplify users' reading experience. It provides an easy and efficient way to keep track of the user's books in an accessible list, while the progress bar to track their reading progress helps users feel more motivated to finish the books.
+This app is designed to simplify and enhance users' reading experiences. It offers an intuitive platform to track books, featuring an accessible list and a progress bar to motivate users by displaying their reading progress.
 
-This app handles authentication, authorization, error handling and creating, deleting and updating objects in a database (CRUD).
+Key features include:
 
-Machine learning book recommendation section in progress.
+Authentication and Authorization: Secure login and user account management.
 
-The goal with this project was to challenge my knowledge of Django by keeping up with newer versions, and to create a large-scale web app that is easily scalable.
-Another goal was to develop skills in combining Python with JavaScript.
+CRUD Operations: Ability to create, update, and delete book entries within a database.
+
+Error Handling: Robust mechanisms to manage errors and ensure smooth functionality.
+
+The main goal of this project was to deepen my understanding of Django, keep up with the latest versions, and develop a scalable web application. Additionally, I aimed to improve my skills in integrating Python with JavaScript for a more dynamic, full-stack experience.
+
 
 ### Built With
 
