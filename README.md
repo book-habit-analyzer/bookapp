@@ -27,39 +27,6 @@ Another goal was to develop skills in combining Python with JavaScript.
 * ![](https://img.shields.io/badge/Bootstrap-232F3E?style=flat-square&logo=bootstrap&logoColor=white)
 * ![](https://img.shields.io/badge/VisualStudio-232F3E?style=flat-square&logo=VisualStudio&logoColor=white)
 
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-
-### Installation
-
-1. Clone the repo
-   ```sh
-   git clone https://github.com/tildajson/BookBuddy.git
-   ```
-2. Install dependencies
-   ```sh
-   pip install -r requirements.txt
-   ```
-3. Start server
-   ```sh
-   python manage.py runserver
-   ```
-4. To visit app
-   ```sh
-   http://127.0.0.1:8000/
-   ```
-
-## Screenshots
-
-[Video demo](https://www.youtube.com/watch?v=TFzdeR5T1sE)
-
-![BookBuddy - Brave 2024-01-22 16_05_47](https://github.com/tildajson/BookBuddy/assets/130234732/2290ce9b-7c6b-444a-8247-e62a0655cfe3)
-![BookBuddy - Brave 2024-01-22 16_06_05](https://github.com/tildajson/BookBuddy/assets/130234732/fabd7c75-09d2-4fb1-b86d-36cb80ad55da)
-![BookBuddy - Brave 2024-01-22 16_06_44](https://github.com/tildajson/BookBuddy/assets/130234732/0a95f79e-952a-4c9a-8409-0450aeca1e04)
-
 ## Roadmap
 
 - [x] Authentication & Authorization
