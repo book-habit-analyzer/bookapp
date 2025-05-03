@@ -64,6 +64,11 @@ def view_list(request, list_id):
     books = Book.objects.filter(user=request.user, list_id=list_id)  # Assuming list_id is a field in Book
     return render(request, 'view_list.html', {'books': books})
 
+def new_list(request):
+    # Your logic for handling the 'new list' view
+    return render(request, 'your_template.html')
+
+
 def login_view(request):
     """Log in user and redirect to book list."""
     if request.method == 'POST':
