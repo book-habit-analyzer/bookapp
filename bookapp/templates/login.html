@@ -5,11 +5,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - Book Habit Analyzer</title>
+    <title>Login - Book Habit Analyzer</title>
     <link rel="stylesheet" href="{% static 'styles.css' %}">
     <style>
         body {
-            background-image: url("{% static 'register-background.jpg' %}");
+            background-image: url("{% static 'login-background.jpg' %}");
             background-size: cover;
             background-position: center;
         }
@@ -17,13 +17,12 @@
 </head>
 <body>
     <div class="container">
-        <h1>Create a New Account</h1>
+        <h1>Login to Your Account</h1>
         <form method="POST">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" class="btn">Register</button>
+            <button type="submit" class="btn">Login</button>
         </form>
     </div>
 </body>
 </html>
-

@@ -1,83 +1,94 @@
+/* Global Styles */
 body {
-    font-family: 'Gentium Book Plus', serif;
-    background-color: #1A312B !important;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
 }
 
-.content {
-    text-align: center;
-    margin-top: 50px;
-}
-
-#greeting {
-    font-size: large;
-    margin-left: 20px;
-    margin-top: 20px;
-    color: #bbc7c5;
-}
-
-h4 {
-    font-size: 2em;
-    color: #EEEAE7;
-    margin-bottom: 25px;
-}
-
-#id_total_pages, #id_current_page, #id_title {
-    padding:10px 10px;
-    font-size:15px;
-    float:left;
-    outline-color:#fff;
-    background-color: #455D58;
-    border-color: #1A312B;
-}
-
-#id_title{
-    width:600px;
-}
-
-#id_current_page {
-    width:200px;
-}
-
-#id_total_pages{
-    width:200px;
-}
-
-#logout-btn {
-    color:#013201;
-    background: #C3D9C6;
-    padding:7px 7px;
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
     border-radius: 10px;
-    font-size:16px;
-    cursor: pointer;
-    width:5em;
-    border: 1px solid #2D3C1F;
-    margin-left: 20px;
-    margin-top: -5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.button_add_book {
-    color:#2D3C1F;
-    background:#E5ECDD;
-    padding:8px 9px;
-    border-radius: 10px;
-    font-size:17px;
-    text-transform:uppercase;
-    cursor: pointer;
-    width:7em;
-    border: 1px solid #5A7378;
+h1, h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
 }
 
-#chart {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#bar-chart {
+/* Navbar */
+.navbar {
+    background-color: #4a90e2;
+    padding: 15px;
+    color: white;
+    font-weight: bold;
     margin-bottom: 30px;
-    color: #F5F7F5;
 }
 
-td {
-    color: #F5F7F5;
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 1.2rem;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 15px;
+    background-color: #4a90e2;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #357ABD;
+}
+
+/* Form Styles */
+form input, form select, form textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form textarea {
+    height: 150px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f1f1f1;
+}
+
+/* Book Image & Background */
+.book-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.background-image {
+    background-size: cover;
+    background-position: center;
 }
