@@ -91,3 +91,16 @@ def logout_view(request):
     """Log out user."""
     logout(request)
     return redirect("login")
+
+@login_required
+def my_list(request):
+    user_books = Book.objects.filter(user=request.user)
+    form = BookForm(request.POST or None, user=request.user)
+    if request.method == "POST" and form.is_valid():
+        form.save()
+        return redirect("myList")
+    return render(request, "myList.html", {
+        "books": user_books,
+        "form": form
+    })
+
