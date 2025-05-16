@@ -54,7 +54,7 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect("my_list")
+            return render(request, 'base.html', {'user': user})
     else:
         form = UserForm()
     return render(request, 'register.html', {'form': form})
@@ -80,6 +80,7 @@ def login_view(request):
         try:
             user = User.objects.get(username=username, password_hash=password)
             login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+            messages.success(request, "Login successful")
             return redirect("my_list")
         except User.DoesNotExist:
             messages.error(request, "Invalid login")

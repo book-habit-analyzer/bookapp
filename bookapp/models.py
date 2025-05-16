@@ -7,7 +7,7 @@ class User(models.Model):
     email = models.EmailField(unique=True)
     password_hash = models.TextField()
     is_profile_public = models.BooleanField(default=True)
-    date_joined = models.DateField(auto_now_add=True)
+    date_joined = models.DateTimeField(default=timezone.now)  # Changed to DateTime for precision
 
     def __str__(self):
         return self.username
@@ -21,12 +21,12 @@ class Book(models.Model):
         ('Abandoned', 'Abandoned'),
     ]
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='books')
     title = models.CharField(max_length=255)
     author = models.CharField(max_length=255, blank=True)
     genre = models.CharField(max_length=100, blank=True)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='Currently Reading')
-    date_added = models.DateField(auto_now_add=True)
+    date_added = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.title
@@ -40,7 +40,7 @@ class ReadingGoal(models.Model):
         ('Monthly', 'Monthly'),
     ]
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reading_goals')
     goal_type = models.CharField(max_length=10, choices=GOAL_CHOICES)
     target_pages = models.PositiveIntegerField()
     start_date = models.DateField()
@@ -52,9 +52,9 @@ class ReadingGoal(models.Model):
 
 # ReadingLog model to log reading progress (pages read, notes, reflections)
 class ReadingLog(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    book = models.ForeignKey(Book, on_delete=models.CASCADE)
-    date = models.DateField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reading_logs')
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='logs')
+    date = models.DateField(default=timezone.now)
     pages_read = models.PositiveIntegerField()
     notes = models.TextField(blank=True)
     reflection = models.TextField(blank=True)
@@ -65,7 +65,7 @@ class ReadingLog(models.Model):
 
 # AnalyticsSummary to store user's overall reading analytics
 class AnalyticsSummary(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True, related_name='analytics')
     total_books_read = models.PositiveIntegerField(default=0)
     total_pages_read = models.PositiveIntegerField(default=0)
     avg_pages_per_day = models.FloatField(default=0.0)
@@ -78,8 +78,8 @@ class AnalyticsSummary(models.Model):
 
 # CalendarHeatmapData to store daily reading stats for the calendar heatmap
 class CalendarHeatmapData(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    date = models.DateField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='heatmap_data')
+    date = models.DateField(default=timezone.now)
     pages_read = models.PositiveIntegerField()
 
     class Meta:
